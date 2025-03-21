@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("A_charming_and_intelligent_cartoon_character_resem.jpg")
+    no-repeat right center fixed;
+  background-size: contain;
+  color: black;
+  background-color: #b89b7f;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 700px;
+  margin: left;
+  background: rgb(198, 195, 195);
+  padding: 2px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+.wishes {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  color: red;
+  max-width: 700px;
+  margin: left;
+  background: rgb(198, 195, 195);
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+.dudu-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns cards to the left */
+  align-items: flex-start; /* Keeps them aligned at the top */
+  gap: 30px; /* Space between the cards */
+  margin-left: 30px; /* Moves everything slightly to the left */
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Ensure each card is equal in size */
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Ensures uniform width */
+  height: auto; /* Allows content to fit naturally */
+}
+
+/* Make images responsive and equal */
+.card img {
+  width: 100%;
+  height: 250px; /* Ensures all images have the same height */
+  object-fit: cover; /* Prevents distortion */
+  border-radius: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.code-btn {
+  background-color: #4caf50;
+}
+.guitar-btn {
+  background-color: #ff5733;
+}
+
+.birthday-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; /* Make the card smaller */
+  height: auto;
+  margin-top: -20px;
+  margin-right: 800px;
+  margin-left: 200px;
+}
+
+.lastwish-btn {
+  background-color: #ff5733;
+}
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.stop-btn {
+  background-color: #dc3545; /* Red color for stop button */
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space below the birthday button */
+  width: auto; /* Fit the button to its content */
+  position: absolute; /* Position it within the card */
+  right: 10px; /* Push it to the right */
+  bottom: 10px; /* Push it towards the bottom */
+}
+@media (max-width: 768px) {
+  .container,
+  .wishes,
+  .dudu-container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .dudu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

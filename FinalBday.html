@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="FinalBdaystyle.css" />
+    <title>!!! Happiest Birthday Coder 🎉 !!!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎉 Happy Birthday, Coder! 🎂</h1>
+      <p>Wishing you a day filled with fun and laughter! 🎈</p>
+    </div>
+
+    <p class="wishes"></p>
+
+    <div class="dudu-container">
+      <div class="card">
+        <img
+          src="DALL·E 2025-03-19 19.53.23 - An animated scene of a young coder working enthusiastically on a laptop, surrounded by floating lines of code and glowing futuristic UI elements. The .webp"
+          alt="Dancing Dudu"
+        />
+        <button class="btn code-btn" onclick="playMusic('coding')">
+          Code & Groove 🎧
+        </button>
+        <p class="message" id="coding-message"></p>
+      </div>
+
+      <div class="card">
+        <img
+          src="DALL·E 2025-03-19 19.54.24 - An animated GIF of a young, stylish cartoon character playing an electric guitar passionately. The character has glasses, a hoodie, and sneakers, and .webp"
+          alt="Dancing Dudu"
+        />
+        <button class="btn guitar-btn" onclick="playMusic('guitar')">
+          Rock & Roll 🎸
+        </button>
+        <p class="message" id="guitar-message"></p>
+      </div>
+
+      <div class="card birthday-card">
+        <button class="btn lastwish-btn" onclick="playMusic('final')">
+          Happiest Birthday Once Again 🎉
+        </button>
+        <button class="btn stop-btn" onclick="stopMusic()">⏹ Stop Music</button>
+        <p class="message" id="final-message"></p>
+      </div>
+    </div>
+    <!-- Audio Elements -->
+    <audio id="coding-music" src="fadedinstrumental.mp3"></audio>
+    <audio
+      id="guitar-music"
+      src="converted-audio-audiotrimmercom_s2zyVm3d.mp3"
+    ></audio>
+    <audio id="final-music" src="Nagutha-Nagutha.mp3"></audio>
+
+    <script>
+      function playMusic(type) {
+        let codingAudio = document.getElementById("coding-music");
+        let guitarAudio = document.getElementById("guitar-music");
+        let finalAudio = document.getElementById("final-music");
+
+        if (type === "coding") {
+          guitarAudio.pause(); // Stop other music
+          finalAudio.pause(); // Stop other music
+          codingAudio.currentTime = 0;
+          codingAudio.play();
+          document.getElementById("coding-message").innerText =
+            "Keep coding, keep building! 🚀";
+        } else if (type === "guitar") {
+          codingAudio.pause(); // Stop other music
+          finalAudio.pause(); // Stop other music
+          guitarAudio.currentTime = 0;
+          guitarAudio.play();
+          document.getElementById("guitar-message").innerText =
+            "Strum your way to greatness! 🎶";
+        } else if (type === "final") {
+          codingAudio.pause(); // Stop other music
+          guitarAudio.pause(); // Stop other music
+          finalAudio.currentTime = 0;
+          finalAudio.play(); // Use finalAudio instead of final
+          document.getElementById("final-message").innerText =
+            "Have a great day 🎉";
+        }
+      }
+
+      function stopMusic() {
+        let codingAudio = document.getElementById("coding-music");
+        let guitarAudio = document.getElementById("guitar-music");
+        let finalAudio = document.getElementById("final-music");
+
+        codingAudio.pause();
+        codingAudio.currentTime = 0;
+        guitarAudio.pause();
+        guitarAudio.currentTime = 0;
+        finalAudio.pause();
+        finalAudio.currentTime = 0;
+      }
+      // ADD YOUR TYPEWRITER EFFECT SCRIPT HERE
+      const text = `"Happy Birthday"🎉
+      Thank you for your endless support, wisdom, and positivity. You're a true
+      maestro of both coding and music—may your lines of code always be bug-free
+      and your guitar strings always stay in tune. Keep rocking, keep debugging,
+      and keep making the world brighter with your talents. Wishing you a
+      fantastic year ahead!`;
+      let index = 0;
+      const wishElement = document.querySelector(".wishes");
+
+      function typeWriterEffect() {
+        if (index < text.length) {
+          wishElement.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeWriterEffect, 50);
+        }
+      }
+
+      window.onload = typeWriterEffect;
+    </script>
+  </body>
+</html>
